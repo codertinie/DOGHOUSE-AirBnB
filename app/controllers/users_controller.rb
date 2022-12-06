@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       render json: {errors: user.errors.full_messages}, status: :unprocessable_entity 
     end
   end
+  
 
   private
 
