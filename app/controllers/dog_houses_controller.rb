@@ -1,4 +1,6 @@
 class DogHousesController < ApplicationController
+  skip_before_action :authorize, only: [:index]
+  # skip_before_action :verify_authenticity_token
 
   def index
     render json: DogHouse.all, include: ['reviews']
