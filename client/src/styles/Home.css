@@ -1,34 +1,38 @@
 body {
-    background: #d2d4da;
+    background-image: url(/home/moringa/DOGHOUSE-AirBnB/client/assets/pexels-dorte-179221.jpg);
     font-weight: bold;
     color: #0d1321;
     text-align: center;
+    flex-wrap: nowrap;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10%;
+.container{
+display: grid;
+margin: auto;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: auto;
+  column-gap: 12%;
+  row-gap: 70px;
 }
 
 .card {
     padding: 30px;
     margin: 2%;
-    /* background: #1d2d44; */
-    width: 100px;
-    height: 100px;
+    background: #d2d4da;
+    width: 500px;
+    height: 600px;
     box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
-    transition: .2s all;
+    transition: .2s ;
     cursor: pointer;
+    padding-right: 2px;
 }
 
 .container:hover .card {
-    filter: blur(3px);
+    filter: blur(0.01px);
     opacity: .5;
     transform: scale(.98);
-    /* box-shadow: #1d2d44; */
+    box-shadow: #1d2d44;
 }
 
 .container:hover .card:hover {
@@ -36,10 +40,10 @@ body {
     filter: blur(0px);
     opacity: 1;
     box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
-    /* background: #1d2d44; */
-    color: azure;
+    background: #d2d4da;
+    color: #1d2d44;
 }
 .card img{
-    width: 400px;
-    height: 350px;
+    width: 500px;
+    height: 400px;
 }
