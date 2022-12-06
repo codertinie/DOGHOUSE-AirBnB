@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :reviews
-  resources :dog_houses
+  resources :dog_houses, only: [:index]
   
   get "/me", to: "users#show"
 

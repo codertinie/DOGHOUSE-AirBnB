@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import '../../components/styles/Navbar.css'
+import '../../styles/Navbar.css'
 
 function Navbar() {
     const [openLinks, setOpenLinks] = useState(false);
@@ -14,7 +14,7 @@ function Navbar() {
 
             <div className="navbar">
                 <div className="leftSide" id={openLinks ? "open" : "close"}>
-                    <img src='logo192.png' alt="" />
+                    <h1>DOGHOUSES-AIRBNB</h1>
                     <div className="hiddenLinks">
                         <Link to="/"> Home </Link>
                         <Link to="/about"> About </Link>
