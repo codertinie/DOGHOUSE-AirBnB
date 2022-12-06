@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-
-
 const colors = {
     orange: "#FFBA5A",
     grey: "#a9a9a9"
@@ -31,15 +29,13 @@ function Single() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.head}>
-        Feedback from you will much be appreciated!!
-        </h2>
+      <h2> Dog's AirBnB </h2>
       <div style={styles.stars}>
         {stars.map((_, index) => {
           return (
             <FaStar
               key={index}
-              size={24}
+              size={30}
               onClick={() => handleClick(index + 1)}
               onMouseOver={() => handleMouseOver(index + 1)}
               onMouseLeave={handleMouseLeave}
@@ -62,12 +58,11 @@ function Single() {
       >
         Submit
       </button>
-
-      <div className="image">
-      </div>
+      
     </div>
   );
 };
+
 
 const styles = {
   container: {
@@ -78,27 +73,27 @@ const styles = {
   stars: {
     display: "flex",
     flexDirection: "row",
+    
   },
   textarea: {
     border: "1px solid #a9a9a9",
     borderRadius: 5,
     padding: 10,
     margin: "20px 0",
-    minHeight: 100,
-    width: 300
+    minHeight: 200,
+    width: 500
   },
   button: {
     border: "1px solid #a9a9a9",
     borderRadius: 5,
     width: 300,
     padding: 10,
-    backgroundColor: '#FFBA5A'
-  },
-  
-  
+  }
+
 };
 
 
 
 
 export default Single;
+ 
