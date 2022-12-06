@@ -14,6 +14,7 @@ export default function Signup({ onLogin }) {
   const showToastMessage = () => {
     toast.success("Signup Successfull!", {
       position: toast.POSITION.TOP_CENTER,
+      className: 'toast-message'    
     });
   };
   const toastMessage = () => {
