@@ -56,7 +56,7 @@ function Single() {
       <button
         style={styles.button}
       >
-        Submit
+        Add Review
       </button>
       
     </div>
@@ -76,7 +76,7 @@ const styles = {
     
   },
   textarea: {
-    border: "1px solid #a9a9a9",
+    border: "1px solid #1d2d44",
     borderRadius: 5,
     padding: 10,
     margin: "20px 0",
@@ -84,7 +84,7 @@ const styles = {
     width: 500
   },
   button: {
-    border: "1px solid #a9a9a9",
+    border: "1px solid #0d1321",
     borderRadius: 5,
     width: 300,
     padding: 10,
