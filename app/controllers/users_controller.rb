@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   skip_before_action :authorize, only: [:create]
 
   def show
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
       render json: {errors: user.errors.full_messages}, status: :unprocessable_entity 
     end
   end
+  
 
   private
 
