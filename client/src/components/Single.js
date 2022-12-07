@@ -3,6 +3,7 @@ import { useState } from "react";
 //import './App.css';
 import { FaStar } from "react-icons/fa";
 //import '../../assets'
+import React from 'react'
 
 const colors = {
     orange: "#FFBA5A",
@@ -12,11 +13,10 @@ const colors = {
 
 
 
-import React from 'react'
-import 
+// import 
 
 
-function Single() {
+function Single(){
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)

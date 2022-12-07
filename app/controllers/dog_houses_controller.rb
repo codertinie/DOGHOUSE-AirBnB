@@ -9,7 +9,7 @@ class DogHousesController < ApplicationController
   def show
     doghouse = DogHouse.find_by(id: params[:id])
     if doghouse
-      render json: doghouse
+      render json: doghouse, serializer: DoghousewithreviewsSerializer
     else
       render json: {error: "DogHouse not found"}, status: :not_found
     end
