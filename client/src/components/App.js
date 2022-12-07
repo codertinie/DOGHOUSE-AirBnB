@@ -19,17 +19,52 @@ function App() {
       })
   }, [setUser])
 
+
+  const [dogHouses, setDogHouses] = useState([])
+  const [house, setHouse] = useState({})
+  useEffect(() => {
+    fetch('/dog_houses')
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+        setDogHouses(data)
+      })
+  }, [])
+
+  function click(id){
+    //return(id)
+    
+      fetch(`/dog_houses/${id}`)
+       .then(response => response.json()
+       )
+       .then((data) => {
+         //console.log(data)
+         setHouse(data)
+
+
+   
+       })
+
+    
+  }
+
+  //console.log(house)
+ 
   return (
 
 
     <BrowserRouter>
       <Routes>
 
+<<<<<<< HEAD
+        <Route exact path='/' element = { <Home dogHouses={dogHouses} click={click} />}/>
+=======
         <Route exact path='/' element = { <Home  />}/>
+>>>>>>> a509348603d4d010f6756e5d91e3e0e2b2eabe4f
         <Route path='/about' element = { <About />} />
         <Route path='/login' element = { <Login/>} />
-        <Route path='/signup' element = { <Signup/>} />
-        <Route path='/single' element = {<Single/>} />
+        <Route path='/signup' element = { <Signup />} />
+        <Route path='/single' element = {<Single house={house} />} />
 
         <Route exact path='/' element={<Home/>} />
         <Route path='/about' element={<About />} />
