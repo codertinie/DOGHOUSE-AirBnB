@@ -18,23 +18,12 @@ function App() {
       })
   }, [setUser])
 
-  const [dogHouses, setDogHouses] = useState([])
-
-  useEffect(() => {
-    fetch('/dog_houses')
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data)
-        setDogHouses(data)
-      })
-  }, [])
-
   return (
 
 
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Home dogHouses={dogHouses} />} />
+        <Route exact path='/' element={<Home/>} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login onLogin={setUser} />} />
         <Route path='/signup' element={<Signup onLogin={setUser} />} />
