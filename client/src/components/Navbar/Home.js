@@ -13,16 +13,16 @@ function Home({ dogHouses }) {
             <h3>{house.name}</h3>
             <h3>Location: {house.location}</h3>
             <p><span>Price:</span>{house.price}</p>
-                    <Link to="/info">
-                        <button onClick={handleClick}>View More</button>
+                    <Link to="/single">
+                        <button >View More</button>
                     </Link>
 
         </div>
         </> ))
-    const navigate = useNavigate()
-    function handleClick() {
-        navigate("/single")
-    }
+    // const navigate = useNavigate()
+    // function handleClick() {
+    //     navigate("/single")
+    // }
     return (
         <>
             <Navbar />
