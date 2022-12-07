@@ -18,7 +18,7 @@ function Single({house}) {
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
   
-
+console.log(house)
   
   
   const handleClick = value => {
