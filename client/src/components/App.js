@@ -4,6 +4,7 @@ import Home from './Navbar/Home';
 import About from './Navbar/About'
 import Signup from './Navbar/Signup'
 import Login from './Navbar/Login'
+import Single from './Single';
 
 function App() {
 
@@ -23,6 +24,13 @@ function App() {
 
     <BrowserRouter>
       <Routes>
+
+        <Route exact path='/' element = { <Home dogHouses={dogHouses} />}/>
+        <Route path='/about' element = { <About />} />
+        <Route path='/login' element = { <Login/>} />
+        <Route path='/signup' element = { <Signup/>} />
+        <Route path='/single' element = {<Single/>} />
+
         <Route exact path='/' element={<Home/>} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login onLogin={setUser} />} />
