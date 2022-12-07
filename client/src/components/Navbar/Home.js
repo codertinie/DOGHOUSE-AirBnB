@@ -2,20 +2,12 @@ import React,{useEffect, useState} from "react";
 import { Link} from "react-router-dom";
 import "../../styles/Home.css";
 import Navbar from "./Navbar";
+import Single from '../Single'
 // import Single from "../Single";
 
-function Home() {
+function Home({dogHouses, click}) {
 
-  const [dogHouses, setDogHouses] = useState([])
 
-  useEffect(() => {
-    fetch('/dog_houses')
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data)
-        setDogHouses(data)
-      })
-  }, [])
     const dogHouse = dogHouses.map((house) => (
         <>
             <div className="card">
@@ -24,7 +16,7 @@ function Home() {
             <h3>Location: {house.location}</h3>
             <p><span>Price:</span>{house.price}</p>
                     <Link to="/single">
-                        <button >View More</button>
+                        <button onClick={()=>click(house.id)} >View More</button>
                     </Link>
 
         </div>
