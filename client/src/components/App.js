@@ -5,37 +5,47 @@ import About from './Navbar/About'
 import Signup from './Navbar/Signup'
 import Login from './Navbar/Login'
 
-function App(){
+function App() {
 
- const[dogHouses, setDogHouses]=useState([])
+  const [user, setUser] = useState(null)
 
-    useEffect(()=>{
-      fetch('/dog_houses')
-      .then(response=>response.json())
-      .then((data)=>{
+  useEffect(() => {
+    fetch('/me')
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user))
+        }
+      })
+  }, [setUser])
+
+  const [dogHouses, setDogHouses] = useState([])
+
+  useEffect(() => {
+    fetch('/dog_houses')
+      .then(response => response.json())
+      .then((data) => {
         console.log(data)
         setDogHouses(data)
       })
-    },[])
+  }, [])
 
-    return (
-      
-      
-      <BrowserRouter>
+  return (
+
+
+    <BrowserRouter>
       <Routes>
-        <Route exact path='/' element = { <Home dogHouses={dogHouses} />}/>
-        <Route path='/about' element = { <About />} />
-        <Route path='/login' element = { <Login/>} />
-        <Route path='/signup' element = { <Signup/>} />
-        
+        <Route exact path='/' element={<Home dogHouses={dogHouses} />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/login' element={<Login onLogin={setUser} />} />
+        <Route path='/signup' element={<Signup onLogin={setUser} />} />
+
       </Routes>
-      </BrowserRouter>
-       
-  
-    );
-  }
-  
-  
-  export default App;
-  
-  
+    </BrowserRouter>
+
+
+  );
+}
+
+
+export default App;
+
