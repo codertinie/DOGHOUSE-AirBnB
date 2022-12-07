@@ -6,7 +6,7 @@
     flex-direction: column;
     background-color: rgb(219, 224, 237);
     background-size: cover;
-    background-image: url(/home/aisha/DOGHOUSE-AirBnB/assets/pexels-chevanon-photography-1108099.jpg);
+    background-image: url("../../assets/pexels-chevanon-photography-1108099.jpg");
     
 }
 .signuptittle{
@@ -15,10 +15,11 @@
 }
 
 .registerform{
-    margin-top: 10px;
+    /* margin-top: 10px; */
     display: flex;
     flex-direction: column;
-
+    width: 20%;
+    height: 50%;
 }
 .registerform > label{
     margin: 10px 0;
@@ -38,4 +39,11 @@
     border-radius: 10px;
     color: white;
 
+}
+.toast-message {
+    background: darkblue;
+    color: #fff;
+    font-size: 20px;
+    width: 34vw;
+    padding: 30px 20px;
 }

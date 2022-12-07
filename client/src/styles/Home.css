@@ -1,5 +1,5 @@
 body {
-    background-image: url(/home/moringa/DOGHOUSE-AirBnB/client/assets/pexels-dorte-179221.jpg);
+    background-image: url("../../assets/pexels-dorte-179221.jpg");
     font-weight: bold;
     color: #0d1321;
     text-align: center;
