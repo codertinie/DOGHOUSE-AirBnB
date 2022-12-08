@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Home.css";
-import Navbar from "./Navbar";
 // import Single from '../Single'
 // import Single from "../Single";
 
-function Home({ dogHouses, click }) {
+function Home({ dogHouses, click, user }) {
 
 
     const dogHouse = dogHouses.map((house) => (
@@ -19,9 +18,16 @@ function Home({ dogHouses, click }) {
                 </div>
                 <br></br>
                 <br></br>
-                <Link to="/single">
+                {user ? (
+                    <Link to={`/dog_houses/${house.id}`}>
                         <button onClick={() => click(house.id)} >View More</button>
+                    </Link>
+                ) : (
+                    <Link to="/login">
+                    <button>View More</button>
                 </Link>
+                )}
+
             </div>
         </>))
     // const navigate = useNavigate()
@@ -30,11 +36,9 @@ function Home({ dogHouses, click }) {
     // }
     return (
         <>
-            <Navbar />
             <div className="container">
                 {dogHouse}
             </div>
-
         </>
 
     );
