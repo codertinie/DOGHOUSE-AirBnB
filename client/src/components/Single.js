@@ -38,9 +38,15 @@ console.log(house)
 
 
     <div style={styles.container}>
+      
     <div>
+      
       <img src={house.image_url} alt="house"/>
       <h3>{house.name}</h3>
+     {house.reviews?.map((review) => (
+       <p>{review.comment}</p>
+     ))}
+      
       
     
     </div>
