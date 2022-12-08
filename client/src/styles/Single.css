@@ -18,7 +18,7 @@
     flex: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .button{
     padding: 10px 20px;
@@ -46,4 +46,7 @@
 .leftside.img{
 height: 100%;
 
+}
+.reviews{
+    text-align: left;
 }

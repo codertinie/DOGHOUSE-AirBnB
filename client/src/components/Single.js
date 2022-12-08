@@ -46,7 +46,7 @@ function Single({ house, user, fetchPostedReview }) {
       <div className="rightside">
         <h1>REVIEWS</h1>
         {house.reviews?.map((review) => (
-          <ul>
+          <ul className="reviews">
             <li>{review.comment}</li>
           </ul>
           // <p>{review.comment}</p>
