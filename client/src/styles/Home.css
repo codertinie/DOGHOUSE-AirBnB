@@ -66,6 +66,7 @@ img:hover+.centered{
     border: 1px solid #1d2d44;
     margin: auto;
     border-radius: 25px;
+    margin-top: 2px;
 }
 .card button:hover{
     background: #1d2d44;

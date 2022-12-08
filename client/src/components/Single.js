@@ -82,7 +82,7 @@ console.log(house)
    <button
      style={styles.button}
    >
-     Submit
+     SUBMIT
    </button>
   </div>
   
@@ -125,6 +125,7 @@ const styles = {
     color:"#1d2dd4",
     
   },
+ 
 
   // doghouse: {
   //   width: "800px",
