@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 //import './App.css';
 import { FaStar } from "react-icons/fa";
 //import '../../assets'
@@ -7,9 +7,12 @@ const colors = {
   orange: "#FFBA5A",
   grey: "#A9A9A9",
 };
-function Single({ house, user, fetchPostedReview }) {
+function Single({ user, id }) {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
+  const [house, setHouse] = useState({})
+  const [reviews, setReviews]=useState(false)
+
   const stars = Array(5).fill(0);
   const[comment, setComment]=useState('')
   const handleClick = (value) => {
@@ -26,6 +29,7 @@ function Single({ house, user, fetchPostedReview }) {
   }
   function handleSubmit(e) {
     e.preventDefault();
+    e.target.reset()
     fetch(`/dog_houses/${house.id}/reviews`, {
       method: "POST",
       headers: {
@@ -34,6 +38,23 @@ function Single({ house, user, fetchPostedReview }) {
       body: JSON.stringify({ comment, user_id: user.id }),
     });
     fetchPostedReview()
+    
+  }
+  console.log(id)
+  useEffect(() => {
+    fetch(`/dog_houses/${id}`)
+      .then(response => response.json()
+      )
+      .then((data) => {
+        //console.log(data)
+        setHouse(data)
+      })
+
+  },[reviews])
+  console.log(house)
+
+  function fetchPostedReview(){
+    setReviews(reviews=>!reviews)
   }
   return (
     <div className="single">

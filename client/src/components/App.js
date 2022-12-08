@@ -9,8 +9,9 @@ import Navbar from './Navbar/Navbar';
 function App() {
   const [user, setUser] = useState(null)
   const [dogHouses, setDogHouses] = useState([])
-  const [house, setHouse] = useState({})
-  const [reviews, setReviews]=useState(false)
+  
+  
+  const [id, setId] = useState(0)
 
   useEffect(() => {
     fetch('/me')
@@ -31,24 +32,25 @@ function App() {
   }, [])
   function click(id) {
     //return(id)
-    fetch(`/dog_houses/${id}`)
-      .then(response => response.json()
-      )
-      .then((data) => {
-        //console.log(data)
-        setHouse(data)
-      })
+    // fetch(`/dog_houses/${id}`)
+    //   .then(response => response.json()
+    //   )
+    //   .then((data) => {
+    //     //console.log(data)
+    //     setHouse(data)
+    //   })
+    setId(id)
+    
   }
-  function fetchPostedReview(){
-    setReviews(reviews=>!reviews)
-  }
+  console.log(id)
+  
   //console.log(house)
   return (
     <BrowserRouter>
       <Navbar user={user} setUser={setUser}/>
       <Routes>
         <Route exact path='/' element={<Home dogHouses={dogHouses} click={click} user={user} />} />      
-        <Route path={`/dog_houses/${house.id}`} element={<Single fetchPostedReview={fetchPostedReview} house={house} user={user} />} />
+        <Route path={`/dog_houses/${id}`} element={<Single  user={user} id={id}/>} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login onLogin={setUser} />} />
         <Route path='/signup' element={<Signup onLogin={setUser} />} />
