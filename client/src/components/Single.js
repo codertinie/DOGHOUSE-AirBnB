@@ -3,7 +3,7 @@ import React, { useState } from "react";
 //import './App.css';
 import { FaStar } from "react-icons/fa";
 //import '../../assets'
-
+import '../styles/Single.css'
 
 const colors = {
     orange: "#FFBA5A",
@@ -43,13 +43,16 @@ console.log(house)
       
       <img src={house.image_url} alt="house"/>
       <h3>{house.name}</h3>
-     {house.reviews?.map((review) => (
+     {/* {house.reviews?.map((review) => (
        <p>{review.comment}</p>
-     ))}
+     ))} */}
       
       
     
     </div>
+    {house.reviews?.map((review) => (
+       <p>{review.comment}</p>
+     ))}
     
      <div style={styles.stars}>
      {stars.map((_, index) => {
