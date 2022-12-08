@@ -39,10 +39,11 @@ console.log(house)
 
     <div style={styles.container}>
     <div>
-      <img src={house.image_url}/>
+      <img src={house.image_url} alt="house"/>
       <h3>{house.name}</h3>
-    </div>
+      
     
+    </div>
     
      <div style={styles.stars}>
      {stars.map((_, index) => {
@@ -61,11 +62,12 @@ console.log(house)
          />
        )
      })}
+      
       </div>
    
-   <div>
-     reviews
-   </div>
+   {/* <div style={styles.reviews}>
+     <h3>{house.reviews}</h3>
+   </div> */}
    <textarea
      placeholder="What's your experience?"
      style={styles.textarea}
@@ -76,12 +78,14 @@ console.log(house)
    >
      Submit
    </button>
-   
   </div>
+  
+  
 
 
-   
+  
   );
+  
 };
 
 
@@ -112,12 +116,13 @@ const styles = {
     width: 300,
     padding: 10,
   },
-  doghouse: {
-    width: "800px",
-    display: "flex",
-    flexDirection: "row"
 
-  }
+  // doghouse: {
+  //   width: "800px",
+  //   display: "flex",
+  //   flexDirection: "row"
+
+  // }
 
 
 };
