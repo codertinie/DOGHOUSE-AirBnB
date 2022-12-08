@@ -101,6 +101,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     
+    
   },
   
   stars: {
@@ -110,7 +111,7 @@ const styles = {
   },
   textarea: {
     border: "1px solid #a9a9a9",
-    borderRadius: 5,
+    borderRadius: 25,
     padding: 10,
     margin: "20px 0",
     minHeight: 100,
@@ -118,9 +119,11 @@ const styles = {
   },
   button: {
     border: "1px solid #a9a9a9",
-    borderRadius: 5,
+    borderRadius: 25,
     width: 300,
     padding: 10,
+    color:"#1d2dd4",
+    
   },
 
   // doghouse: {
