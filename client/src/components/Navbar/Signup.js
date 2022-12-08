@@ -77,7 +77,7 @@ export default function Signup({ onLogin }) {
           className="registerinput"
           type="text"
           value={name}
-          placeholder="Enter your username.."
+          placeholder="Enter your fullname.."
         />
         <label>Email</label>
         <input

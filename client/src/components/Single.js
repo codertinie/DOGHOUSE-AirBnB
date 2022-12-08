@@ -12,11 +12,10 @@ const colors = {
 
 
 
-import React from 'react'
-import 
 
 
-function Single() {
+
+ function Single() {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)

@@ -14,15 +14,10 @@
     color: rgb(244, 235, 235);
 }
 
-.registerform{
-    /* margin-top: 10px; */
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 50%;
-}
+
+
 .registerform > label{
-    margin: 10px 0;
+    margin: 1px 0;
 }
 .registerinput{
     padding: 10px;
