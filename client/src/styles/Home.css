@@ -39,10 +39,7 @@ margin: auto;
     transition: transform 0.8s; 
     transform-style: preserve-3d;
 }
-/* .card:hover {
-    transform: translate(-50%, -50)
-    rotateY('180deg');
-} */
+
 .centered{
     position: absolute;
     cursor: pointer;
