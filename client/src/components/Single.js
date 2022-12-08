@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 //import '../../assets'
 import "../styles/Single.css";
+import { RiDeleteBin6Line } from "react-icons/ri"
+
 const colors = {
   orange: "#FFBA5A",
   grey: "#A9A9A9",
@@ -11,10 +13,10 @@ function Single({ user, id }) {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const [house, setHouse] = useState({})
-  const [reviews, setReviews]=useState(false)
+  const [reviews, setReviews] = useState(false)
 
   const stars = Array(5).fill(0);
-  const[comment, setComment]=useState('')
+  const [comment, setComment] = useState('')
   const handleClick = (value) => {
     setCurrentValue(value);
   };
@@ -38,7 +40,7 @@ function Single({ user, id }) {
       body: JSON.stringify({ comment, user_id: user.id }),
     });
     fetchPostedReview()
-    
+
   }
   console.log(id)
   useEffect(() => {
@@ -50,12 +52,25 @@ function Single({ user, id }) {
         setHouse(data)
       })
 
-  },[reviews])
+  }, [reviews])
   console.log(house)
 
-  function fetchPostedReview(){
-    setReviews(reviews=>!reviews)
+  function fetchPostedReview() {
+    setReviews(reviews => !reviews)
   }
+
+  function handleDelete(id) {
+    fetch(`/reviews/${id}`, {
+      method: "DELETE"
+    })
+      .then(() => {
+        const updatedReviews = reviews.filter((review) => review.id !== id)
+        setReviews(updatedReviews)      
+      })
+      fetchPostedReview()
+  }
+
+
   return (
     <div className="single">
       <div className="leftside">
@@ -69,6 +84,13 @@ function Single({ user, id }) {
         {house.reviews?.map((review) => (
           <ul className="reviews">
             <li>{review.comment}</li>
+            <button style={{ color: "white",
+              backgroundColor: "red",
+              padding: "2px",
+              width: 50,
+              borderRadius: 25 }}
+              onClick={() => handleDelete(review.id)}
+            ><RiDeleteBin6Line /></button>
           </ul>
           // <p>{review.comment}</p>
         ))}
