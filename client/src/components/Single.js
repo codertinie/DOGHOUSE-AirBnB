@@ -1,25 +1,23 @@
 
-import { useState } from "react";
+import React, { useState } from "react";
 //import './App.css';
 import { FaStar } from "react-icons/fa";
 //import '../../assets'
+
 
 const colors = {
     orange: "#FFBA5A",
     grey: "#a9a9a9"
     
-};
-
-
-
-
-
-
- function Single() {
+}
+function Single({house}) {
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
-
+  
+console.log(house)
+  
+  
   const handleClick = value => {
     setCurrentValue(value)
   }
@@ -29,20 +27,20 @@ const colors = {
   };
 
   const handleMouseLeave = () => {
-    setHoverValue(undefined)
-  }
-
+    setHoverValue(undefined)}
 
   return (
     
+
+
+
     <div style={styles.container}>
-      <h2> Dog's AirBnB </h2>
-    <div style={styles.separate}>
-      <div style={styles.image}>
-        
-      </div>
+    <div>
+      <img src={house.image_url}/>
+      <h3>{house.name}</h3>
+      <h3>{house.price}</h3>
+      <h3>{house.location}</h3>
     </div>
-    
     
     
      <div style={styles.stars}>
@@ -63,9 +61,9 @@ const colors = {
        )
      })}
       </div>
- 
+   
    <div>
-     reviews
+     <h3>{house.reviews}</h3>
    </div>
    <textarea
      placeholder="What's your experience?"
