@@ -44,12 +44,57 @@ function Single({ house, user, fetchPostedReview }) {
   }
   return (
     <div className="single">
+
       <div className="leftside">
         <img src={house.image_url} alt="house" />
         <h3>{house.name}</h3>
         {/* {house.reviews?.map((review) => (
        <p>{review.comment}</p>
      ))} */}
+
+      
+    <div className="leftside">
+      
+      <img src={house.image_url} alt="house"/>
+      <h3>DogHouse Name : {house.name}</h3>
+      <h3>Location :{house.location}</h3>
+      <h3>Price :Ksh.{house.price}</h3>
+     {/* {house.reviews?.map((review) => (
+       <p>{review.comment}</p>
+     ))} */}
+    </div>
+      
+    
+
+   <div className="rightside">
+     <h1>REVIEWS</h1>
+    {house.reviews?.map((review) => (
+      <ul>
+        <li>
+        {review.comment}
+        </li>
+      </ul>
+      //  <p>{review.comment}</p>
+     ))}
+    
+     <div style={styles.stars}>
+     {stars.map((_, index) => {
+       return (
+         <FaStar
+           key={index}
+           size={40}
+           onClick={() => handleClick(index + 1)}
+           onMouseOver={() => handleMouseOver(index + 1)}
+           onMouseLeave={handleMouseLeave}
+           color={(hoverValue || currentValue) > index ? colors.orange : colors.grey}
+           style={{
+             marginRight: 10,
+             cursor: "pointer"
+           }}
+         />
+       )
+     })}
+
       </div>
 
       <div className="rightside">
@@ -106,6 +151,9 @@ const styles = {
   stars: {
     display: "flex",
     flexDirection: "row",
+
+    justifyContent: "center"
+
   },
   textarea: {
     border: "1px solid #a9a9a9",
@@ -113,6 +161,7 @@ const styles = {
     padding: 10,
     margin: "20px 0",
     minHeight: 100,
+
     width: 300,
   },
   // button: {
@@ -123,6 +172,21 @@ const styles = {
   //   color:"#1d2dd4",
 
   // },
+
+    width: 500,
+    justifyContent: "center",
+    
+    bottom: "0px"
+  },
+  button: {
+    border: "1px solid #a9a9a9",
+    borderRadius: 25,
+    width: 300,
+    padding: 10,
+    justifyContent: "center"
+    // color:"#1d2dd4",
+    
+  },
 
   // doghouse: {
   //   width: "800px",
