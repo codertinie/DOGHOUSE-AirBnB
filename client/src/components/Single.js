@@ -39,14 +39,17 @@ function Single({ house, user, fetchPostedReview }) {
     <div className="single">
       <div className="leftside">
         <img src={house.image_url} alt="house" />
-        <h3>{house.name}</h3>
-        {/* {house.reviews?.map((review) => (
-       <p>{review.comment}</p>
-     ))} */}
+        <h3>DogHouse Name: {house.name}</h3>
+        <h3>Location: {house.location}</h3>
+        <h3>Price: Kshs.{house.price}</h3>
       </div>
       <div className="rightside">
+        <h1>REVIEWS</h1>
         {house.reviews?.map((review) => (
-          <p>{review.comment}</p>
+          <ul>
+            <li>{review.comment}</li>
+          </ul>
+          // <p>{review.comment}</p>
         ))}
         <div style={styles.stars}>
           {stars.map((_, index) => {
