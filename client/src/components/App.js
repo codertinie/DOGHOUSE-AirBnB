@@ -56,6 +56,11 @@ function App() {
     <BrowserRouter>
       <Routes>
 
+
+        <Route exact path='/' element = { <Home dogHouses={dogHouses} click={click} />}/>
+
+        <Route exact path='/' element = { <Home  />}/>
+
         <Route exact path='/' element = { <Home dogHouses={dogHouses} click={click} />}/>
         <Route exact path='/' element = { <Home  />}/>
         <Route path='/about' element = { <About />} />
