@@ -14,7 +14,9 @@ function App() {
           r.json().then((user) => setUser(user))
         }
       })
-  }, [setUser])
+  }, [])
+
+  
   const [dogHouses, setDogHouses] = useState([])
   const [house, setHouse] = useState({})
   useEffect(() => {
@@ -44,7 +46,7 @@ function App() {
         <Route path='/about' element = { <About />} />
         <Route path='/login' element = { <Login/>} />
         <Route path='/signup' element = { <Signup />} />
-        <Route path='/single' element = {<Single house={house} />} />
+        <Route path='/single' element = {<Single user={user} house={house} />} />
         <Route exact path='/' element={<Home/>} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<Login onLogin={setUser} />} />
