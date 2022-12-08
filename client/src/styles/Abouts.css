@@ -3,6 +3,7 @@
     height: 90vh;
     display: flex;
     flex-direction: column;
+    background-color: rgb(214, 219, 228);
   }
   
   .aboutTop {
