@@ -18,7 +18,7 @@ function Single({house}) {
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
   
-
+console.log(house)
   
   
   const handleClick = value => {
@@ -41,6 +41,8 @@ function Single({house}) {
     <div>
       <img src={house.image_url}/>
       <h3>{house.name}</h3>
+      <h3>{house.price}</h3>
+      <h3>{house.location}</h3>
     </div>
     
     
@@ -64,7 +66,7 @@ function Single({house}) {
       </div>
    
    <div>
-     reviews
+     <h3>{house.reviews}</h3>
    </div>
    <textarea
      placeholder="What's your experience?"
