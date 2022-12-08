@@ -26,6 +26,7 @@ margin: auto;
     transition: .2s ;
     cursor: pointer;
     padding-right: 2px;
+    border-radius: 25px;
 }
 
 .container:hover .card {
@@ -46,4 +47,10 @@ margin: auto;
 .card img{
     width: 500px;
     height: 400px;
+    border-radius: 25px;
+}
+@media only screen and (min-width: 600px) {
+    .navbar .leftSide button {
+      display: none;
+    }
 }
