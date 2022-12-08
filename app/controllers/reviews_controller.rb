@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-
-
+  skip_before_action :authorize, only: [:create]
   def index
     render json: Review.all
   end
@@ -15,8 +14,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.create(review_params)
-    render json: review, status: :created
+    if params[:dog_house_id]
+      dog_house=DogHouse.find(params[:dog_house_id])
+      reviews=dog_house.reviews
+      reviews.create!(comment:params[:comment], user_id:params[:user_id])
+    else
+      reviews=Review.all
+    end
+    render json: reviews, status: :created
   end
 
   def destroy
