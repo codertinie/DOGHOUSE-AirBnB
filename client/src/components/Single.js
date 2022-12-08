@@ -37,19 +37,19 @@ console.log(house)
 
 
 
-    <div style={styles.container}>
+    <div className="single">
       
-    <div>
+    <div className="leftside">
       
       <img src={house.image_url} alt="house"/>
       <h3>{house.name}</h3>
      {/* {house.reviews?.map((review) => (
        <p>{review.comment}</p>
      ))} */}
-      
+    </div>
       
     
-    </div>
+   <div className="rightside">
     {house.reviews?.map((review) => (
        <p>{review.comment}</p>
      ))}
@@ -83,14 +83,14 @@ console.log(house)
    />
 
    <button
-     style={styles.button}
+     className="button"
    >
      Submit
    </button>
   </div>
   
   
-
+</div>
 
   
   );
@@ -99,13 +99,14 @@ console.log(house)
 
 
 const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+  // container: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   alignItems: "center",
+  //   border: "3px solid #fff",
+  //   padding: "20px",
     
-    
-  },
+  // },
   
   stars: {
     display: "flex",
@@ -120,14 +121,14 @@ const styles = {
     minHeight: 100,
     width: 300
   },
-  button: {
-    border: "1px solid #a9a9a9",
-    borderRadius: 25,
-    width: 300,
-    padding: 10,
-    color:"#1d2dd4",
+  // button: {
+  //   border: "1px solid #a9a9a9",
+  //   borderRadius: 25,
+  //   width: 300,
+  //   padding: 10,
+  //   color:"#1d2dd4",
     
-  },
+  // },
 
   // doghouse: {
   //   width: "800px",
