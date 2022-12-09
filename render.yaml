@@ -1,8 +1,8 @@
 databases:
   - name: postgres
-    # databaseName: mysite
-    # user: mysite
-    ipAllowList: []
+    databaseName: DOGHOUSE_AirBnB_production
+    user: DOGHOUSE_AirBnB
+    # ipAllowList: []
 
 services:
   - type: web
