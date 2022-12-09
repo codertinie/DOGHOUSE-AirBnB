@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  skip_before_action :authorize, only: [:create]
+  skip_before_action :authorize, only: [:create, :update]
   def index
     render json: Review.all
   end
@@ -28,6 +28,11 @@ class ReviewsController < ApplicationController
     review = Review.find_by(id: params[:id])
     review.destroy
     head :no_content
+  end
+  def update
+    review = Review.find(params[:id])
+    review.update(comment:params[:comment])
+    render json: review, status: :accepted
   end
 
   private

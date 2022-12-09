@@ -14,6 +14,9 @@ function Single({ user, id }) {
   const [hoverValue, setHoverValue] = useState(undefined);
   const [house, setHouse] = useState({})
   const [reviews, setReviews] = useState(false)
+  const[review, setReview]=useState({
+    comment:''
+  })
 
   const stars = Array(5).fill(0);
   const [comment, setComment] = useState('')
@@ -69,6 +72,27 @@ function Single({ user, id }) {
       })
       fetchPostedReview()
   }
+  function handleUpdate(id){
+    let comment=prompt('Write down your review');
+    setReview(comment)
+    console.log(review)
+    fetch(`/reviews/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify({comment:review}),
+    })
+    .then(r=>
+     { if(r.ok){
+        r.json().then((data)=>{
+          setReviews(data)
+        })
+        fetchPostedReview()
+      }
+    })
+    
+  }
 
 
   return (
@@ -91,6 +115,11 @@ function Single({ user, id }) {
               borderRadius: 25 }}
               onClick={() => handleDelete(review.id)}
             ><RiDeleteBin6Line /></button>
+            <button style={{marginLeft: "10px"}} onClick={() => handleUpdate(review.id)}>
+            <span role="img" aria-label="edit">
+              ✏️
+            </span>
+          </button>
           </ul>
           // <p>{review.comment}</p>
         ))}
