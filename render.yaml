@@ -19,6 +19,6 @@ services:
         sync: false
   - type: redis
     name: redis
-    ipAlliList: []
+    # ipAlliList: []
     plan: free
     maxmemoryPolicy: noeviction
