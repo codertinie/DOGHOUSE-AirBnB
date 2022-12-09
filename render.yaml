@@ -1,6 +1,6 @@
 databases:
   - name: postgres
-    databaseName: DOGHOUSE_AirBnB_production
+    # databaseName: DOGHOUSE_AirBnB_production
     user: codertinie
     # ipAllowList: []
 
@@ -19,6 +19,6 @@ services:
         sync: false
   - type: redis
     name: redis
-    # ipAlliList: []
+    ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
