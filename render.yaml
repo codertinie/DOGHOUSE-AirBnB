@@ -1,7 +1,7 @@
 databases:
   - name: postgres
     databaseName: DOGHOUSE_AirBnB_production
-    user: DOGHOUSE_AirBnB
+    user: codertinie
     # ipAllowList: []
 
 services:
