@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_05_112733) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "dog_houses", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -23,8 +26,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_112733) do
   create_table "reviews", force: :cascade do |t|
     t.string "comment"
     t.integer "star_rating"
-    t.integer "user_id", null: false
-    t.integer "dog_house_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "dog_house_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dog_house_id"], name: "index_reviews_on_dog_house_id"
